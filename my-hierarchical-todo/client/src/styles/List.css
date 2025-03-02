@@ -1,0 +1,36 @@
+.list-container {
+    background: #f8f8ff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    min-height: 100px;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  
+  .list-header h2 {
+    cursor: pointer;
+    margin: 0;
+  }
+  
+  .new-item-form {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  
+  .new-item-form input {
+    flex: 1;
+    margin-right: 0.5rem;
+  }
+  
+  .draggable-item-wrapper {
+    margin-bottom: 0.5rem;
+  }
+  

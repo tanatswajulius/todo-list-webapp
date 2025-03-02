@@ -1,0 +1,39 @@
+.item-container {
+    border: 1px solid #ddd;
+    margin: 0.25rem 0;
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 4px;
+  }
+  
+  .item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .item-header span {
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  .item-header button {
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .sub-item-section {
+    margin-left: 1rem;
+  }
+  
+  .sub-item-list {
+    margin-left: 1rem;
+  }
+  
+  .new-sub-item-form {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  

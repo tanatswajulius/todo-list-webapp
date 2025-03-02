@@ -1,0 +1,31 @@
+.app-container {
+    margin: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .create-list-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .create-list-form input {
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .lists-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .single-list-droppable {
+    min-height: 150px;
+  }
+  
