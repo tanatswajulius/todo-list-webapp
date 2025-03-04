@@ -15,6 +15,8 @@ CORS(app)
 with app.app_context():
     db.create_all()
 
+
+
 @app.route("/api/lists", methods=["GET"])
 def get_lists():
     """
