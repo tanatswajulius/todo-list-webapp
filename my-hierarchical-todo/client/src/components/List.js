@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Item from "./Item";
 import { updateList, createItem } from "../utils/api";
+import { FaTrashAlt, FaPlusCircle } from "react-icons/fa";
 import "../styles/List.css";
 
 import { Draggable } from "react-beautiful-dnd";
@@ -38,7 +39,9 @@ const List = ({ list, onDeleteList }) => {
         ) : (
           <h2 onClick={() => setEditing(true)}>{list.title}</h2>
         )}
-        <button onClick={() => onDeleteList(list.id)}>Delete List</button>
+        <button onClick={() => onDeleteList(list.id)} className="delete-button">
+          <FaTrashAlt />
+        </button>
       </div>
 
       <div className="new-item-form">
@@ -48,7 +51,9 @@ const List = ({ list, onDeleteList }) => {
           placeholder="Add new item..."
           onChange={(e) => setNewItemContent(e.target.value)}
         />
-        <button onClick={handleAddItem}>Add</button>
+        <button onClick={handleAddItem} className="add-item-button">
+          <FaPlusCircle />
+        </button>
       </div>
 
       {list.items?.map((item, index) => (

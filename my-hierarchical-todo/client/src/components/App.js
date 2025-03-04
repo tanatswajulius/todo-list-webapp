@@ -67,7 +67,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Hierarchical ToDo Lists</h1>
+      <h1>The ToDo App</h1>
 
       <div className="create-list-form">
         <input

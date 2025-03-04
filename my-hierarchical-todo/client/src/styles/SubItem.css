@@ -3,3 +3,17 @@
     border-left: 1px dashed #ccc;
   }
   
+  button {
+    background-color: #D2B48C;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #fff;
+    color: #D2B48C; /* invert colors */
+  }

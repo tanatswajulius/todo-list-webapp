@@ -15,7 +15,9 @@ CORS(app)
 with app.app_context():
     db.create_all()
 
-
+@app.route("/")
+def index():
+    return jsonify({"message": "Hello, World!"})
 
 @app.route("/api/lists", methods=["GET"])
 def get_lists():

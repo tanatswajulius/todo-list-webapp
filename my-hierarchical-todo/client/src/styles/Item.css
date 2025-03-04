@@ -1,39 +1,64 @@
 .item-container {
-    border: 1px solid #ddd;
-    margin: 0.25rem 0;
-    padding: 0.5rem;
-    background: #fff;
-    border-radius: 4px;
-  }
-  
-  .item-header {
+    border: 1px solid #E8DFD8;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    background: #FDFBF9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.item-container:hover {
+    border-color: #D4C4B5;
+    background: white;
+    transform: translateX(2px);
+}
+
+.item-header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .item-header span {
+    gap: 1rem;
+}
+
+.item-header span {
     cursor: pointer;
     flex: 1;
-  }
-  
-  .item-header button {
-    margin: 0;
-    padding: 0.2rem 0.5rem;
-  }
-  
-  .sub-item-section {
+    color: #594D44;
+    font-size: 0.95rem;
+}
+
+.item-header button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.sub-item-section {
+    margin-left: 1.5rem;
+    margin-top: 0.8rem;
+    padding-left: 1rem;
+    border-left: 2px solid #E8DFD8;
+}
+
+.sub-item-list {
     margin-left: 1rem;
-  }
-  
-  .sub-item-list {
-    margin-left: 1rem;
-  }
-  
-  .new-sub-item-form {
-    margin-top: 0.5rem;
+}
+
+.new-sub-item-form {
+    margin-top: 0.8rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-  }
-  
+    gap: 0.8rem;
+}
+
+.new-sub-item-form input {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.add-sub-item-button {
+    padding: 0.6rem;
+    background: #D4C4B5;
+}
+
+.add-sub-item-button:hover {
+    background: #BC9F82;
+}

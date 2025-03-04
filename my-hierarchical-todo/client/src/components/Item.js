@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { updateItem, deleteItem, createItem } from "../utils/api";
+import { FaTrashAlt, FaPlusCircle } from "react-icons/fa"; // add
 import "../styles/Item.css";
 
 /**
  * Renders a single item. Can recursively render sub-items.
  * Allows editing and toggling sub-items' visibility.
  */
-function Item({ item, parentType, parentId }) {
+function Item({ item, parentType, parentId, depth = 0 }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [editing, setEditing] = useState(false);
   const [content, setContent] = useState(item.content);
@@ -48,7 +49,9 @@ function Item({ item, parentType, parentId }) {
         ) : (
           <span onClick={() => setEditing(true)}>{item.content}</span>
         )}
-        <button onClick={handleDelete}>X</button>
+        <button onClick={handleDelete} className="delete-button">
+          <FaTrashAlt />
+        </button>
       </div>
 
       {!isCollapsed && (
@@ -61,6 +64,7 @@ function Item({ item, parentType, parentId }) {
                   item={sub}
                   parentType="item"
                   parentId={item.id}
+                  depth={depth + 1} 
                 />
               ))}
             </div>
@@ -68,7 +72,7 @@ function Item({ item, parentType, parentId }) {
 
           {/* If you want to strictly limit depth to 3, 
               you can check how deep we are and hide this input if at depth 3 */}
-          {item.subItems?.length < 3 && (
+          {item.subItems?.length < 3 && depth < 3 && (
             <div className="new-sub-item-form">
               <input
                 type="text"
@@ -76,7 +80,10 @@ function Item({ item, parentType, parentId }) {
                 placeholder="Add sub-item..."
                 onChange={(e) => setNewSubItemContent(e.target.value)}
               />
-              <button onClick={handleAddSubItem}>Add Sub-Item</button>
+              <button onClick={handleAddSubItem} className="add-sub-item-button">
+                <FaPlusCircle />
+
+              </button>
             </div>
           )}
         </div>
