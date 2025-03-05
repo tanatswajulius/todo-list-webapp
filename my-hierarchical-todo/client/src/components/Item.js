@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { updateItem, deleteItem, createItem } from "../utils/api";
-import { FaTrashAlt, FaPlusCircle } from "react-icons/fa"; // add
+import { FaChevronDown, FaChevronRight, FaTrashAlt, FaPlusCircle } from "react-icons/fa"; // add
 import "../styles/Item.css";
 
 /**
@@ -36,8 +36,8 @@ function Item({ item, parentType, parentId, depth = 0 }) {
   return (
     <div className="item-container">
       <div className="item-header">
-        <button onClick={() => setIsCollapsed(!isCollapsed)}>
-          {isCollapsed ? "Show" : "Hide"} sub-items
+        <button onClick={() => setIsCollapsed(!isCollapsed)} className="collapse-button">
+          {isCollapsed ? <FaChevronRight /> : <FaChevronDown />}
         </button>
         {editing ? (
           <input
@@ -82,7 +82,6 @@ function Item({ item, parentType, parentId, depth = 0 }) {
               />
               <button onClick={handleAddSubItem} className="add-sub-item-button">
                 <FaPlusCircle />
-
               </button>
             </div>
           )}

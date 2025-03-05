@@ -1,10 +1,25 @@
+.app-container {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #FAF3E0;
+    background-image: 
+        radial-gradient(#8B7355 0.5px, transparent 0.5px),
+        radial-gradient(#8B7355 0.5px, #FAF3E0 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    min-height: 100vh;
+}
+
 .item-container {
-    border: 1px solid #E8DFD8;
-    margin: 0.5rem 0;
-    padding: 1rem;
-    background: #FDFBF9;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(232, 223, 216, 0.5);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin: 0.8rem 0;
+    backdrop-filter: blur(4px);
     transition: all 0.3s ease;
+    max-width: calc(100% - 2rem);
 }
 
 .item-container:hover {
@@ -23,7 +38,12 @@
     cursor: pointer;
     flex: 1;
     color: #594D44;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.item-header span:hover {
+    color: #8B7355;
 }
 
 .item-header button {
@@ -31,11 +51,40 @@
     font-size: 0.9rem;
 }
 
+.collapse-button, .delete-button, .add-sub-item-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E8DFD8;
+    background: transparent;
+    color: #8B7355;
+    transition: all 0.3s ease;
+}
+
+.collapse-button:hover {
+    background: #F5EDE6;
+    transform: scale(1.1);
+}
+
+.delete-button {
+    color: #D4C4B5;
+}
+
+.delete-button:hover {
+    color: #BC9F82;
+    background: #F5EDE6;
+    transform: rotate(8deg);
+}
+
 .sub-item-section {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     margin-top: 0.8rem;
     padding-left: 1rem;
     border-left: 2px solid #E8DFD8;
+    max-width: calc(100% - 2rem);
 }
 
 .sub-item-list {
@@ -54,11 +103,17 @@
     font-size: 0.9rem;
 }
 
-.add-sub-item-button {
-    padding: 0.6rem;
-    background: #D4C4B5;
+.add-sub-item-button:hover {
+    background: #F5EDE6;
+    color: #594D44;
 }
 
-.add-sub-item-button:hover {
-    background: #BC9F82;
+.item-container .item-container {
+    background: rgba(255, 255, 255, 0.7);
+    margin-left: 0;
+    width: calc(100% - 1rem);
+}
+
+.item-container .item-container .item-container {
+    background: rgba(255, 255, 255, 0.5);
 }
